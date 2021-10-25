@@ -1,0 +1,149 @@
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--very-light-gray);
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+main {
+  width: 1140px;
+  height: 720px;
+  margin: 5vh auto;
+}
+
+.top-heading {
+  text-align: center;
+  padding: 0 315px 0 304px;
+}
+
+.top-heading h1 {
+  color: var(--very-dark-blue);
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 2.9rem;
+  padding-bottom: 20px;
+}
+
+.top-heading h1>span {
+  font-weight: 200;
+}
+
+.top-heading p {
+  color: var(--grayish-blue);
+  font-size: 15px;
+  line-height: 1.5rem;
+  padding-bottom: 50px;
+  font-weight: 400;
+}
+
+.grid-container {
+  height: 500px;
+  width: 1130px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: ". teambuilder ."
+    "supervisor teambuilder calculator"
+    "supervisor karma calculator"
+    ". karma .";
+  grid-gap: 25px;
+  justify-content: center;
+}
+
+.grid-container div {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px 30px 30px;
+  position: relative;
+  box-shadow: 0 10px 14px #dae3f2;
+}
+
+.grid-container h3 {
+  color: var(--very-dark-blue);
+  padding-bottom: 10px;
+}
+
+.grid-container p {
+  color: var(--grayish-blue);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.grid-container img {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+.grid-item1 {
+  grid-area: supervisor;
+  border-top: 4px solid var(--cyan);
+}
+
+.grid-item2 {
+  grid-area: teambuilder;
+  border-top: 4px solid var(--red);
+}
+
+.grid-item3 {
+  grid-area: karma;
+  border-top: 4px solid var(--orange);
+}
+
+.grid-item4 {
+  grid-area: calculator;
+  border-top: 4px solid var(--blue);
+}
+
+@media (max-width: 500px) {
+  main {
+    width: 330px;
+    height: 1220px;
+  }
+
+  .top-heading {
+    padding: 0;
+  }
+
+  .top-heading h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .top-heading p {
+    font-size: 14.5px;
+  }
+
+  .grid-container {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "supervisor"
+      "teambuilder"
+      "karma"
+      "calculator";
+  }
+
+  .grid-container div {
+    height: 230px;
+  }
+}
